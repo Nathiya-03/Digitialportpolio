@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portfolio - Nathi Ganesan</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff69b4, #ffb6c1);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 105, 180, 0.9);
+            padding: 2.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 6px solid #fff;
+            position: relative;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .header-content h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            color: #ffe4e1;
+            margin-top: 0.5rem;
+        }
+
+        .profile-picture {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+        }
+
+        nav {
+            background: #ff1493;
+            padding: 1.2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #fff;
+            color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .section-content {
+            background: rgba(255, 245, 238, 0.95);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section-content:hover::before {
+            opacity: 1;
+        }
+
+        .section-content:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #ff1493;
+            margin-bottom: 1rem;
+            border-bottom: 3px dashed #fff;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-content p,
+        .section-content ul {
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '✨';
+            margin-right: 10px;
+            color: #ff69b4;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: #ff1493;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover {
+            background: #fff;
+            color: #ff1493;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        footer {
+            background: #ff69b4;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #fff;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>NATHI GANESAN</h1>
+            <p>I'm a B.Sc Computer Science Student</p>
+        </div>
+        <img src="Nathiya.jpg" alt="Nathi Ganesan's Profile Picture" class="profile-picture">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section-content">
+            <h2>About Me</h2>
+            <p>A dedicated and enthusiastic second-year BSc Computer Science student with a passion for learning new
+                technologies. Possessing foundational knowledge in programming and web development, I am eager to apply
+                my skills in practical settings while continuing to expand my technical expertise. I am a quick learner
+                who enjoys problem-solving and working collaboratively on projects.</p>
+        </section>
+
+        <section id="education" class="section-content">
+            <h2>Education</h2>
+            <p>Dr. Ambedkar Government Arts and Science College, Tamil Nadu</p>
+        </section>
+
+        <section id="skills" class="section-content">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages:</li>
+                <li>Basic Java</li>
+                <li>Python Fundamentals</li>
+                <li>Web Development:</li>
+                <li>HTML, CSS</li>
+                <li>Able to create multi-page static websites</li>
+                <li>Tools:</li>
+                <li>VS Code</li>
+                <li>Eclipse</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section-content">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="#">Digital Portfolio</a></li>
+            </ul>
+        </section>
+
+        <section id="resume" class="section-content full-width">
+            <h2>Resume</h2>
+            <center>
+                <a href="nathiya.pdf" target="_blank" class="download-button">Download CV</a>
+            </center>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 NATHI GANESAN</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
